@@ -1,0 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header_bg{
+  background-color: white;
+}
+
+.search{
+  background-color: #f6f6f4;
+  width: 100px;
+  height: 30px;
+}
+
+div #myInput{
+  background-image: url('../src/images/search.png'); 
+  background-position: 10px 12px; 
+  background-repeat: no-repeat; 
+  width: 100%; 
+  font-size: 16px; 
+  padding: 12px 20px 12px 40px; 
+  border: 1px solid #ddd;
+  margin-bottom: 12px; 
+}
