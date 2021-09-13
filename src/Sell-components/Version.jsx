@@ -18,21 +18,22 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';*/}
 
 ////////////////Showing Exact Value/////////////////////////
-function Version(props,match) {
+function Version(props) {
 
   const dispatch = useDispatch()
 
   const [product,setProduct]=useState(JSON.parse(localStorage.getItem('Version')))
 //   const product = useSelector(state => state.getProductDetails)
 
-  const addItemCart=()=>{
-console.log("shahid")
+  const addItemCart=(product)=>{
+console.log("shahid",product)
     // dispatch(addToCart())
      props.history.push({
                 pathname: '/device-Specification/DeviceSwitch',
-               
+                state:product
                  })
-    
+    //new set
+                 localStorage.setItem('DeviceSwitch',JSON.stringify(product))
     }
 
      
@@ -79,7 +80,7 @@ const getDataFromSession=()=>{
 
                 <div>
                    <Button variant="contained" style={{ height: 40,marginLeft:10,backgroundColor:'#82b74b',color:'white'}} size="large" 
-                   onClick={()=> addItemCart()}
+                   onClick={()=> addItemCart(product)}
                    endIcon={<ArrowRightAltIcon />} >
 Get Exact Value
                     {/* <NavLink className="nav-link"  style={{color:'white'}} exact to="/Device-Specification/DeviceSwitch" > Get Exact Value</NavLink> */}

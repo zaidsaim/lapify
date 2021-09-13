@@ -33,20 +33,20 @@ const SearchLaptop1 = () => {
 
 
 
-    const fetch = () => {
-        console.log("callig fetch data methods")
-        axios
-            .get('http://localhost:5000/testAPI/demo')
-            .then((response) => {
+    // const fetch = () => {
+    //     console.log("callig fetch data methods")
+    //     axios
+    //         .get('https://lapify.in/api/all-brands')
+    //         .then((response) => {
                 
-                console.log(" list of brands", response.data);
+    //             console.log(" list of brands", response.data);
                
-                setdata(response.data)
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
+    //             setdata(response.data)
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         });
+    // }
 
   const SamsungHandler=()=>{
           history.push({
@@ -288,7 +288,7 @@ useEffect(()=>{
                                         <div className="col">
                                             <p className=" text-right">
                                                 <Button style={{ color: "black" }}
-                                                    className="btn btn-secondary" endIcon={< DoubleArrowTwoToneIcon />} onClick={fetch}>More Brands
+                                                    className="btn btn-secondary" endIcon={< DoubleArrowTwoToneIcon />}>More Brands
 
                                                 </Button>
                                                 {/* <Button style={{color:"black"}}

@@ -18,7 +18,7 @@ function About() {
         <div>
        <h1 style={{marginLeft:500,marginTop:30}}> About Us</h1>
        <Divider style={{border:'1px solid',margin:'0 680px 0 500px'}}/>
-       
+
        <div>
        <p  style={{marginLeft:300,marginTop:30}}>  When it comes to smartphones, we’re the only one place that does it all. <br/><span style={{marginLeft:200}}> At Cashify, you get</span></p>
          

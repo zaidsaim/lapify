@@ -8,9 +8,7 @@ import store from './Redux/store'
  
 const MyContext = React.createContext({});
 ReactDOM.render(
-<Provider store={store}>
-<App/>
-</Provider>
+    <App/>
 ,
     document.getElementById("root"));
 
