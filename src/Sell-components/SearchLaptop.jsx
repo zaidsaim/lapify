@@ -33,20 +33,20 @@ const SearchLaptop1 = () => {
 
 
 
-    // const fetch = () => {
-    //     console.log("callig fetch data methods")
-    //     axios
-    //         .get('https://lapify.in/api/all-brands')
-    //         .then((response) => {
+    const fetch = () => {
+        console.log("callig fetch data methods")
+        axios
+            .get('https://lapify.in/api/all-brands')
+            .then((response) => {
                 
-    //             console.log(" list of brands", response.data);
+                console.log(" list of brands", response.data);
                
-    //             setdata(response.data)
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    // }
+                setdata(response.data)
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
 
   const SamsungHandler=()=>{
           history.push({
