@@ -21,7 +21,7 @@ const demo=()=>{
 const handleOnClick=(data)=>{
     // console.log("calling handle event",JSON.parse(data))
      history.push({
-         pathname:"/version",
+         pathname:"/Version",
       state:data
         
         })

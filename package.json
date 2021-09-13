@@ -45,7 +45,7 @@
     "node": "^15.12.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node app",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "predeploy": "npm run build",

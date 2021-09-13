@@ -36,7 +36,7 @@ const SearchLaptop1 = () => {
     const fetch = () => {
         console.log("callig fetch data methods")
         axios
-            .get('http://localhost:5000/testAPI/demo')
+            .get('https://lapify.in/api/all-brands')
             .then((response) => {
                 
                 console.log(" list of brands", response.data);
@@ -288,7 +288,7 @@ useEffect(()=>{
                                         <div className="col">
                                             <p className=" text-right">
                                                 <Button style={{ color: "black" }}
-                                                    className="btn btn-secondary" endIcon={< DoubleArrowTwoToneIcon />} onClick={fetch}>More Brands
+                                                    className="btn btn-secondary" endIcon={< DoubleArrowTwoToneIcon />}>More Brands
 
                                                 </Button>
                                                 {/* <Button style={{color:"black"}}

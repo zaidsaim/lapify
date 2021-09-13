@@ -7,14 +7,14 @@ import Footer from '../Footer'
 import Box from '@material-ui/core/Box';
 import {Divider} from '@material-ui/core'
 import {NavLink} from "react-router-dom"
-
+import { useHistory } from 'react-router';
 
 import { RadioGroup ,Button} from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Card from '@material-ui/core/Card';
-import {useEffect} from 'react'
+import {useEffect,useDispatch} from 'react'
 
 
 
@@ -30,9 +30,20 @@ import {useEffect} from 'react'
 // }
 
 
-function DeviceSwitch() {
-const [inputData,setInputData]=useState('')
+
+
+      
+             function DeviceSwitch(props) {
+
+               const history=useHistory()
+             
+    
+const [products,setProducts]=useState(JSON.parse(localStorage.getItem('DeviceSwitch')))
+//const [inputData,setInputData]=useState('')
 const [count, setCount] = useState();
+
+console.log('hello',products)
+
 // const [items,setItems]=useState(getLocalItems())
  //const [touchscreen, setTouchscreen] = React.useState('');
 /*const addItems=()=>{
@@ -46,25 +57,48 @@ const [count, setCount] = useState();
     console.log('inputdata',inputData)
 
      //localStorage.setItem('LaptopSwitchOn', inputData.toString());       JSON.stringify(items)
-   
+
 }*/
-   useEffect(() => {
+   /*useEffect(() => {
 //       localStorage.setItem('lists',JSON.stringify(items))
 //       var laptopswitchon = localStorage.getItem('LaptopSwitchOn');
-      console.log('res',localStorage.getItem('DeviceWidth'))
-      setCount(localStorage.getItem('DeviceWidth'))
+      console.log('res',localStorage.getItem('DeviceSwitch'))
+      setCount(localStorage.getItem('DeviceSwitch'))
+      fromSession()
+      console.log()
 
-   }, [])
+   }, [dispatch])*/
+
+//    const fromSession=()=>{
+//     var data = JSON.parse(localStorage.getItem('DeviceSwitch'))
+//     console.log("calling getdata",data.Name)
+//     console.log("product",products)
+    
+// }
+
+
+const handleOnClick=(products)=>{
+    // console.log("calling handle event",JSON.parse(data))
+    props.history.push({
+         pathname:"/systemconfiguration",
+      state:products
+        
+        })
+
+        localStorage.setItem('systemconfiguration',JSON.stringify(products))
+}
+
 
 
 const handle=(event)=>{
     localStorage.setItem('DeviceWidth',event.target.value)
+    setCount(event.target.value)
+    console.log()
+   }
     // localStorage.setItem('Version',)
 //  var laptopswitchon = localStorage.getItem('LaptopSwitchOn');
  //console.log('res',laptopswitchon)
- setCount(event.target.value)
- console.log()
-}
+
 
 
     return (
@@ -167,6 +201,7 @@ const handle=(event)=>{
                      yes</span>
                     </label>
                 </div>
+ 
 
                 <br />
 
@@ -198,8 +233,9 @@ const handle=(event)=>{
                    
 
                 </div>
-           
+            //exact to="/systemconfiguration
             */}
+            
             <Box
         boxShadow={1}
         bgcolor="background.paper"
@@ -207,10 +243,9 @@ const handle=(event)=>{
         p={1}
         style={{ width: 400, height: '31.5rem' ,marginRight:70,marginLeft:200,borderRadius:20,    boxShadow: '0px 10px 12px rgba(0,0,0,0.1)'}}
       >
-        <img style={{width:90,height:90}} src='https://s3n.cashify.in/cashify/product/img/xxhdpi/e21c1388-ddcd.jpg'/>
-        <span style={{marginLeft:20}}>
-       Pavilion Series
-       </span>
+          <div style={{width:20,height:20}}>
+         <img src={products.Url}   />
+         </div>       
        <Divider style={{marginTop:10}}/>
        <p style={{margin:'70px 0 0 20px'}}>Device Evaluation</p>  
        <p style={{marginTop:20,marginLeft:20}}> Does the Laptop Switch ON?</p>
@@ -219,16 +254,16 @@ const handle=(event)=>{
                  {count}
                  </ul>
         
-     
+    
 
       </Box>
      
       </div>
       
       <div>
-                    <Button variant="contained" style={{margin:20, height: 40,marginLeft:"35%",backgroundColor:'#82b74b',color:'white'}} >
-
-                        <NavLink className="nav-link"  style={{color:'white'}} exact to="/systemconfiguration" > Continue </NavLink>
+                    <Button variant="contained"   onClick={()=> handleOnClick()} style={{margin:20, height: 40,marginLeft:"35%",backgroundColor:'#82b74b',color:'white'}} >
+                        continue
+                        {/*<NavLink className="nav-link"  style={{color:'white'}} exact to="/systemconfiguration" > Continue </NavLink>*/}
 
                     </Button></div>
             <Footer />
